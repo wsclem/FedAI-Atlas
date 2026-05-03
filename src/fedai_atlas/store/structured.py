@@ -1,0 +1,1 @@
+"""SQLite structured data store."""
