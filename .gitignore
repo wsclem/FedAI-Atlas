@@ -14,8 +14,15 @@ wheels/
 
 # Data files (committed via .gitkeep, actual data .gitignored)
 data/*.csv
+data/*.xlsx
+data/*.json
 data/lancedb/
 data/*.db
+data/briefs/
+data/batch_jobs.json
+
+# Claude Code
+.claude/
 
 # Eval local results
 evals/results/*.local.md

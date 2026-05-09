@@ -26,4 +26,4 @@ def test_config_fails_without_api_key(monkeypatch: pytest.MonkeyPatch) -> None:
     from fedai_atlas.config import Settings
 
     with pytest.raises(Exception):  # noqa: B017
-        Settings()
+        Settings(_env_file=None)

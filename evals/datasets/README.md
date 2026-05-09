@@ -1,26 +1,27 @@
 # Eval Gold Datasets
 
-This folder holds gold datasets for evaluating `fit_analyzer` and `agency_briefer` outputs.
+Hand-labeled gold records for evaluating the architecture decomposer. Each record pairs a use case ID with its correct approach family, capability pattern, and verdict.
 
-Each gold record pairs a use case (by ID) with a human-assigned **capability category** and **fit verdict**.
+## Taxonomy (two-level)
 
-## Capability categories
+**Approach families**: LLM-based · Classical ML · Computer vision · Time-series · Operations research · Speech/audio · Specialized NLP · Rules-based · Hybrid · Not AI/ML
 
-- Software dev / Claude Code - generation
-- Software dev / Claude Code - modernization
-- Software dev / Claude Code - review & security
-- Software dev / Claude Code - test & docs
-- Long-context document reasoning
-- Structured extraction
-- Drafting / generation
-- Agentic workflow (non-coding)
-- Classification w/ nuance
-- RAG / grounded QA
-- Hybrid (Claude + classical ML)
-- Not a Claude fit
+**Verdicts**: Recommended · Recommended with caveats · Not recommended
 
-## Fit verdicts
+Each family has specific capability patterns (see `src/fedai_atlas/claude/fit_analyzer.py` for the full list).
 
-Strong fit · Partial fit (hybrid) · Weak fit · Wrong tool
+## Gold CSV columns
+
+`use_case_id, approach_family, capability_pattern, verdict`
+
+## Target distribution
+
+- ~30-35 LLM-based cases
+- ~5-8 classical ML
+- ~3-5 computer vision
+- ~3-5 time-series
+- ~3-5 operations research
+- ~3-5 hybrid (architecture decomposition demonstrations)
+- ~2-3 not-AI/ML
 
 Gold records are hand-labeled. Place dataset files (CSV or JSON) alongside this README.

@@ -1,0 +1,3 @@
+use_case_id,capability_category,fit_verdict
+DHS-2452,"Software dev / Claude Code - generation","Strong fit"
+FERC-0001,"Long-context document reasoning","Strong fit"

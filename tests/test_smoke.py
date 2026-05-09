@@ -15,5 +15,8 @@ def test_anthropic_client_instantiates(monkeypatch: pytest.MonkeyPatch) -> None:
 
     get_settings.cache_clear()
     settings = get_settings()
-    client = anthropic.Anthropic(api_key=settings.anthropic_api_key)
+    client = anthropic.Anthropic(
+        api_key=settings.anthropic_api_key,
+        base_url=settings.anthropic_base_url,
+    )
     assert client is not None
